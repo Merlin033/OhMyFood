@@ -1,0 +1,78 @@
+h1, h2{
+        font-family: 'robot', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.77rem;
+    }
+
+h3 {
+    font-family: 'robot', sans-serif;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.313rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: #e7e7e7;
+    height: 50px;
+    .fa-location-dot {
+        padding-right: 1.063rem;
+    }
+
+    p {
+        font-weight: 500;
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 40px 34px 57px 34px;
+    row-gap: 10px;
+
+    text-align: center;
+    background-color: #f7f7f7;
+
+        p {
+            margin-bottom: 17px;
+            font-weight: 300;
+            font-size: 1.125rem;
+        }
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+
+    padding: 48px 20px 68px 20px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+}
+
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+
+    padding: 54px 20px 64px 20px;
+
+    background-color: #f7f7f7;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+    }
+}

@@ -1,0 +1,9 @@
+@use "../utils/mixins";
+
+.btn {
+    @include mixins.btn
+}
+
+.btn-step {
+    @include mixins.btn-step
+}

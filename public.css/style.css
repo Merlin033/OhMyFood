@@ -1,0 +1,252 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+header .logo {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  width: 43.2%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding: 20px 0 30px 25px;
+}
+footer h3 {
+  font-size: 1.125rem;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 400;
+  color: white;
+  padding-bottom: 20px;
+}
+footer ul {
+  color: white;
+  font-weight: 400;
+  list-style: none;
+}
+footer ul li {
+  padding-bottom: 5px;
+}
+footer ul li .fa-utensils {
+  font-size: 0.8rem;
+  padding-right: 11px;
+}
+footer ul li .fa-handshake-angle {
+  font-size: 0.6rem;
+  padding-right: 11px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 0.813rem 1rem 0.813rem 1rem;
+  height: 50px;
+  color: white;
+  border-radius: 25px;
+  border-style: none;
+  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(0deg, #ae80e5 -5.2%, #fface8 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+.btn:active {
+  background: white;
+  color: #9356DC;
+}
+
+.btn-step {
+  height: 72.38px;
+  background: #f7f7f7;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  border-style: none;
+  position: relative;
+  margin-left: 12.5px;
+  text-align: left;
+}
+.btn-step__number {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+  font-size: 14.1818px;
+  font-weight: 400;
+  background-color: #9356DC;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid #9356DC;
+  position: absolute;
+}
+.btn-step .fa-mobile-screen-button {
+  padding-right: 33px;
+  padding-left: 35px;
+}
+.btn-step .fa-list-ul {
+  padding-right: 30px;
+  padding-left: 35px;
+}
+.btn-step .fa-store {
+  padding-right: 30px;
+  padding-left: 35px;
+}
+.btn-step:hover {
+  background-color: #F5EDFF;
+  cursor: pointer;
+}
+.btn-step:hover i {
+  color: #9356DC;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 251px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card__img {
+  height: 68%;
+}
+.card__img img {
+  object-fit: cover;
+  object-position: 0% 90%;
+  height: 100%;
+  width: 100%;
+}
+.card__legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__legend__text {
+  padding: 17px 0 15px 12px;
+}
+.card__legend__text p {
+  font-weight: 300;
+  font-size: 1.063rem;
+  line-height: 1.8rem;
+}
+.card__legend__logo {
+  font-size: 1.38rem;
+  padding: 0 20px 15px 0;
+}
+.card--new {
+  position: absolute;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #008766;
+  background-color: #99E2D0;
+  right: 3%;
+  top: 5%;
+  padding: 5px 10px 5px 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+h1, h2 {
+  font-family: "robot", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.77rem;
+}
+
+h3 {
+  font-family: "robot", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  background-color: #e7e7e7;
+  height: 50px;
+}
+.location .fa-location-dot {
+  padding-right: 1.063rem;
+}
+.location p {
+  font-weight: 500;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 34px 57px 34px;
+  row-gap: 10px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.intro p {
+  margin-bottom: 17px;
+  font-weight: 300;
+  font-size: 1.125rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+  padding: 48px 20px 68px 20px;
+}
+.steps__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+  padding: 54px 20px 64px 20px;
+  background-color: #f7f7f7;
+}
+.restaurants__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+
+/*# sourceMappingURL=style.css.map */
