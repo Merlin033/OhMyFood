@@ -95,7 +95,9 @@ button {
   margin-left: 12.5px;
   text-align: left;
 }
-.btn-step__number {
+.btn-step::before {
+  content: counter(number);
+  counter-increment: number 1;
   height: 1.5rem;
   width: 1.5rem;
   display: flex;
@@ -108,11 +110,6 @@ button {
   color: white;
   border-radius: 50%;
   border: 1px solid #9356DC;
-  position: absolute;
-}
-.btn-step .fa-mobile-screen-button {
-  padding-right: 33px;
-  padding-left: 35px;
 }
 .btn-step .fa-list-ul {
   padding-right: 30px;

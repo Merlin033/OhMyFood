@@ -33,8 +33,11 @@
     border-radius: 20px;
     border-style: none;
     position: relative;
-    margin-left: 12.5px;text-align: left;
-        &__number{
+    margin-left: 12.5px;
+    text-align: left;
+        &::before {
+            content: counter(number);
+            counter-increment: number 1;
             height: 1.5rem;
             width: 1.5rem;
             display: flex;
@@ -47,13 +50,8 @@
             color: white;
             border-radius: 50%;
             border: 1px solid variables.$colour-primary;
-            position: absolute;
         }
-
-        .fa-mobile-screen-button {
-            padding-right: 33px;
-            padding-left: 35px;
-         }
+              
         .fa-list-ul {
            padding-right: 30px;
            padding-left: 35px;

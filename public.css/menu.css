@@ -85,49 +85,4 @@ button {
   color: #9356DC;
 }
 
-.btn-step {
-  height: 72.38px;
-  background: #f7f7f7;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 20px;
-  border-style: none;
-  position: relative;
-  margin-left: 12.5px;
-  text-align: left;
-}
-.btn-step__number {
-  height: 1.5rem;
-  width: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(-50%);
-  font-size: 14.1818px;
-  font-weight: 400;
-  background-color: #9356DC;
-  color: white;
-  border-radius: 50%;
-  border: 1px solid #9356DC;
-  position: absolute;
-}
-.btn-step .fa-mobile-screen-button {
-  padding-right: 33px;
-  padding-left: 35px;
-}
-.btn-step .fa-list-ul {
-  padding-right: 30px;
-  padding-left: 35px;
-}
-.btn-step .fa-store {
-  padding-right: 30px;
-  padding-left: 35px;
-}
-.btn-step:hover {
-  background-color: #F5EDFF;
-  cursor: pointer;
-}
-.btn-step:hover i {
-  color: #9356DC;
-}
-
 /*# sourceMappingURL=menu.css.map */
