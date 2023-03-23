@@ -1,0 +1,5 @@
+@use "../utils/mixins";
+
+.bullet-points {
+    @include mixins.bullet-points;
+}

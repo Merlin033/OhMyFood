@@ -26,56 +26,54 @@
     }
 }
 
-@mixin btn-step {
+@mixin bullet-points {
     height: 72.38px;
     background: #f7f7f7;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    border-style: none;
-    position: relative;
     margin-left: 12.5px;
-    text-align: left;
-        &::before {
-            content: counter(number);
-            counter-increment: number 1;
-            height: 1.5rem;
-            width: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translateX(-50%);
-            font-size: 14.1818px;
-            font-weight: 400;
-            background-color: variables.$colour-primary;
-            color: white;
-            border-radius: 50%;
-            border: 1px solid variables.$colour-primary;
+    font-weight: 500;
+    
+    .fa-solid {
+        padding-right: 30px;
+        padding-left: 35px;
+        color: #7e7e7e;
+        @media screen and (min-width: 768px) {
+            padding-right: 10px;
+            padding-left: 20px;
         }
-              
-        .fa-list-ul {
-           padding-right: 30px;
-           padding-left: 35px;
+        @media screen and (min-width: 1024px) {
+            padding-right: 20px;
+            padding-left: 25px;
         }
-        .fa-store {
-           padding-right: 30px;
-           padding-left: 35px;
-        }
+    }
 
-        &:hover {
-            background-color: #F5EDFF;
-            cursor: pointer;
-
-            i {
-                color: variables.$colour-primary;
-            }
-        }
+    &::before {
+        content: counter(steps) "";       
+        counter-increment: steps;
+        height: 1.5rem;
+        width: 1.5rem;
+        display: grid;
+        place-items: center;
+        transform: translate(-50%, 100%);
+        font-size: 14.1818px;
+        font-weight: 400;
+        background-color: variables.$colour-primary;
+        color: white;
+        border-radius: 50%;       
+    }
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 1024px) {
+        max-width: 322px;
+    }
 }
 
 @mixin card {
     display: flex;
     flex-direction: column;
 
-    position: relative;
     height: 251px;
 
     background-color: white;
@@ -86,44 +84,92 @@
     &__img {height: 68%;
       img {
         object-fit: cover;
-        object-position: 0% 90%;
+        object-position: 0% 70%;
         height: 100%;
         width: 100%;
       }  
     }
   
-    &__legend {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &__text {
-            padding: 17px 0 15px 12px;
-
-            p {           
-                font-weight: 300;
-                font-size: 1.063rem; 
-                line-height: 1.8rem;              
-            }
+    &__legend {       
+        position: relative;
+        pointer-events: none; 
+        &::before {
+            @include heart;
+            pointer-events: auto; 
+        }
+        &::after {
+            @include heart;
+            @include gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            opacity: 0;
+            pointer-events: auto;    
+        }
+        &:hover::after{
+            animation: fill-heart 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            @keyframes fill-heart {
+                0% {
+                  transform: scale(0.1) translateY(-45%) translateZ(-800px);              
+                  filter: blur(12px);
+                  opacity: 0;
+                }
+                18% {
+                  transform: scale(1.1) translateY(-45%) translateZ(10px);
+                  filter: blur(0);
+                  opacity: 0.5;
+                }
+                25% {
+                  transform: scale(1.4) translateY(-45%) translateZ(10px);
+                  filter: blur(0);
+                  opacity: 1;
+                }
+                50% {
+                  transform: scale(1.1) translateY(-45%) translateZ(10px);
+                  filter: blur(0);
+                  opacity: 1;
+                }
+                75% {
+                  transform: scale(1.3) translateY(-45%) translateZ(10px);
+                  filter: blur(0);
+                  opacity: 1;
+                }
+                100% {
+                  transform: scale(1.1) translateY(-45%) translateZ(10px);
+                  filter: blur(0);
+                  opacity: 1;
+                }
+              }
         }
 
-        &__logo {
-            font-size: 1.38rem;
-            padding: 0 20px 15px 0;               
-            }
-            
+        h3,
+        p {
+            margin: 0.3rem 0.8rem;
+        }
+        h3 {
+            padding-top: 1rem;
+        }
+        p {           
+            font-weight: 300;
+            font-size: 1.063rem;              
+        }
     }
+  }
+  @mixin heart {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "font Awesome 6 Free";
+    font-weight: 400;
+    content: "\f004";
 
-    &--new {
-        position: absolute;
-        font-weight: 500;
-        font-size: 0.875rem;
-        color: #008766;
-        background-color: variables.$colour-tertiary;
-        right: 3%;
-        top: 5%;
-        padding: 5px 10px 5px 10px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 2px; 
-    }
+    position: absolute;
+    font-size: 1.38rem;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in-out;
   }

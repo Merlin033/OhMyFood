@@ -1,3 +1,6 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
 h1, h2{
         font-family: 'robot', sans-serif;
         font-weight: 700;
@@ -58,6 +61,28 @@ h3 {
         display: flex;
         flex-direction: column;
         row-gap: 25px;
+        list-style-type: none;
+        counter-reset: steps;
+        
+        li {
+            @include mixins.bullet-points;
+        }
+
+        .hightlight {
+            background-color: #F5EDFF;     
+              .fa-solid {
+                  color: variables.$colour-primary;
+              }
+          }
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            column-gap: 15px;
+        }
+        @media screen and (min-width: 1024px) {
+            column-gap: 24px;
+            justify-content: center;
+        }
     }
 }
 
@@ -74,5 +99,135 @@ h3 {
         display: flex;
         flex-direction: column;
         row-gap: 18px;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+      }
+}
+
+.new {
+    position: relative;
+
+    &::before {
+        content: "Nouveau";
+        position: absolute;
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: darken($color: variables.$colour-tertiary, $amount: (50));
+        background-color: variables.$colour-tertiary;
+        right: 3%;
+        top: 5%;
+        padding: 5px 10px 5px 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 2px; 
+    }
+}
+
+.loader {
+    $animation-duration: 1s;
+    $animation-count: 3;
+    position: fixed;
+    inset: 0;
+    background-color: #FFFFFF;
+    opacity: .9;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    transform-origin: top;
+    animation: disappear 200ms $animation-duration * $animation-count forwards;
+
+    // &::before {
+    //     content: "";
+    //     height: 100px;
+    //     width: 100px;
+    //     border-right: 5px solid transparent;
+    //     border-top: 5px solid variables.$colour-primary;
+    //     border-radius: 50%;
+    //     animation: spin $animation-duration ease-in-out;
+    //     animation-iteration-count: $animation-count;
+    // }
+    // &::after {
+    //     content: "";
+    //     height: 100px;
+    //     width: 100px;
+    //     position: relative;
+    //     top: -100%;
+    //     opacity: 0.5;
+    //     border: 5px dashed variables.$colour-tertiary;
+    //     border-radius: 50%;
+    //     animation: spin $animation-duration 0.4s ease-in-out;
+    //     animation-iteration-count: $animation-count;
+    // }
+}
+
+@keyframes disappear {
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+  .wave,
+.wave > div {
+    position: relative;
+}
+.wave {
+    display: block;
+    color: variables.$colour-primary
+}
+.color2 {
+    color: variables.$colour-secondary;
+}
+.color3 {
+    color: variables.$colour-tertiary;
+}
+.wave > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border-width: 8px;
+    border-radius: 100%;
+    opacity: 0;
+    animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+}
+.wave {
+    width: 100px;
+    height: 100px;
+}
+.wave > div:nth-child(1) {
+    animation-delay: 0s;
+}
+.wave > div:nth-child(2) {
+    animation-delay: .25s;
+}
+.wave > div:nth-child(3) {
+    animation-delay: .5s;
+}
+
+@keyframes ball-scale-ripple-multiple {
+    0% {
+        opacity: 1;
+        transform: scale(.1);
+    }
+    70% {
+        opacity: .5;
+        transform: scale(1);
+    }
+    95% {
+        opacity: 0;
     }
 }
