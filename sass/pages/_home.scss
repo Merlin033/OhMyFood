@@ -194,58 +194,54 @@ h3 {
     }
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
+// @keyframes spin {
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
 
-
-  .wave,
-.wave > div {
-    position: relative;
-}
 .wave {
+    position: relative;
     display: block;
-    color: variables.$colour-primary
-}
+    color: variables.$colour-primary;
+    width: 100px;
+    height: 100px;
+
+    div {
+        position: relative;
+        display: inline-block;
+        float: none;
+        background-color: currentColor;
+        border: 0 solid currentColor;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        border-width: 8px;
+        border-radius: 50%;
+        opacity: 0;
+        animation: onde 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        &:nth-child(2) {
+            animation-delay: .25s;
+        }
+        &:nth-child(3) {
+            animation-delay: .5s;
+        }
+    }
+}  
 .color2 {
     color: variables.$colour-secondary;
 }
 .color3 {
     color: variables.$colour-tertiary;
 }
-.wave > div {
-    display: inline-block;
-    float: none;
-    background-color: currentColor;
-    border: 0 solid currentColor;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    background: transparent;
-    border-width: 8px;
-    border-radius: 100%;
-    opacity: 0;
-    animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
-}
-.wave {
-    width: 100px;
-    height: 100px;
-}
-.wave > div:nth-child(1) {
-    animation-delay: 0s;
-}
-.wave > div:nth-child(2) {
-    animation-delay: .25s;
-}
-.wave > div:nth-child(3) {
-    animation-delay: .5s;
-}
-
-@keyframes ball-scale-ripple-multiple {
+@keyframes onde {
     0% {
         opacity: 1;
         transform: scale(.1);

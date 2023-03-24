@@ -421,30 +421,15 @@ h3 {
     transform: scale(0);
   }
 }
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.wave,
-.wave > div {
-  position: relative;
-}
-
 .wave {
+  position: relative;
   display: block;
   color: #9356DC;
+  width: 100px;
+  height: 100px;
 }
-
-.color2 {
-  color: #FF79DA;
-}
-
-.color3 {
-  color: #99E2D0;
-}
-
-.wave > div {
+.wave div {
+  position: relative;
   display: inline-block;
   float: none;
   background-color: currentColor;
@@ -456,29 +441,29 @@ h3 {
   height: 100px;
   background: transparent;
   border-width: 8px;
-  border-radius: 100%;
+  border-radius: 50%;
   opacity: 0;
-  animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+  animation: onde 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
 }
-
-.wave {
-  width: 100px;
-  height: 100px;
-}
-
-.wave > div:nth-child(1) {
+.wave div:nth-child(1) {
   animation-delay: 0s;
 }
-
-.wave > div:nth-child(2) {
+.wave div:nth-child(2) {
   animation-delay: 0.25s;
 }
-
-.wave > div:nth-child(3) {
+.wave div:nth-child(3) {
   animation-delay: 0.5s;
 }
 
-@keyframes ball-scale-ripple-multiple {
+.color2 {
+  color: #FF79DA;
+}
+
+.color3 {
+  color: #99E2D0;
+}
+
+@keyframes onde {
   0% {
     opacity: 1;
     transform: scale(0.1);
