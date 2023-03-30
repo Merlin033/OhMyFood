@@ -186,7 +186,7 @@ button {
     opacity: 0;
   }
   18% {
-    transform: scale(1.1) translateY(-45%) translateZ(10px);
+    transform: scale(1.1) translateY(-45%) translateeZ(10px);
     filter: blur(0);
     opacity: 0.5;
   }
@@ -229,9 +229,10 @@ h1, h2 {
   font-size: 1.5rem;
   line-height: 1.77rem;
 }
-
-h1 {
-  font-size: 2rem;
+@media screen and (min-width: 800px) {
+  h1 h1, h2 h1 {
+    font-size: 2rem;
+  }
 }
 
 h3 {
@@ -475,6 +476,198 @@ h3 {
   95% {
     opacity: 0;
   }
+}
+.banner img {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.menu {
+  background-color: #f7f7f7;
+  padding: 2rem 0.8rem;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: -3rem;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+.menu h1 {
+  font-family: "Shrikhand", sans-serif;
+  position: relative;
+  pointer-events: none;
+  margin-bottom: 2rem;
+}
+.menu h1::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 6 Free";
+  font-weight: 400;
+  content: "\f004";
+  position: absolute;
+  font-size: 1.38rem;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  pointer-events: auto;
+}
+.menu h1::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 6 Free";
+  font-weight: 400;
+  content: "\f004";
+  position: absolute;
+  font-size: 1.38rem;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: auto;
+}
+.menu h1:hover::after {
+  animation: fill-heart 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes fill-heart {
+  0% {
+    transform: scale(0.1) translateY(-45%) translateZ(-800px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  18% {
+    transform: scale(1.1) translateY(-45%) translateZ(10px);
+    filter: blur(0);
+    opacity: 0.5;
+  }
+  25% {
+    transform: scale(1.4) translateY(-45%) translateZ(10px);
+    filter: blur(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) translateY(-45%) translateZ(10px);
+    filter: blur(0);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.3) translateY(-45%) translateZ(10px);
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1) translateY(-45%) translateZ(10px);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.menu h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.menu h2::before {
+  content: "";
+  background-color: #99E2D0;
+  height: 0.2rem;
+  width: 2.7rem;
+  position: absolute;
+  top: 1.8rem;
+}
+.menu h3 {
+  line-height: 2rem;
+}
+.menu .menu__grid {
+  display: grid;
+  place-items: center;
+  row-gap: 1rem;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+.menu .menu__grid .menu__grid__card {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 2px 4.01149px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu .menu__grid .menu__grid__card .description {
+  margin-right: auto;
+  padding: 0.5rem 0rem 1rem 1rem;
+  overflow: hidden;
+}
+.menu .menu__grid .menu__grid__card .description h3,
+.menu .menu__grid .menu__grid__card .description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu .menu__grid .menu__grid__card span {
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem 1rem 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu .menu__grid .menu__grid__card .checked {
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #99E2D0;
+  border-radius: 0 1rem 1rem 0;
+  width: 4rem;
+  margin-right: -4rem;
+  transition: margin-right 0.5s;
+  flex-shrink: 0;
+}
+.menu .menu__grid .menu__grid__card .checked i {
+  background-color: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.menu .menu__grid .menu__grid__card:hover {
+  cursor: pointer;
+}
+.menu .menu__grid .menu__grid__card:hover .checked {
+  margin-right: 0;
+}
+.menu .menu__grid .menu__grid__card:hover i {
+  animation: spin 0.5s ease-in-out;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.menu button {
+  position: relative;
+  width: 50%;
+  transform: translateX(50%);
 }
 
 /*# sourceMappingURL=style.css.map */

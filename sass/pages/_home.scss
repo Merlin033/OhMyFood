@@ -6,10 +6,12 @@ h1, h2{
         font-weight: 700;
         font-size: 1.5rem;
         line-height: 1.77rem;
+        @media screen and (min-width: 800px) {
+            h1 {
+                font-size: 2rem;
+              }
+        }
     }
-h1 {
-  font-size: 2rem;
-}
 h3 {
     font-family: 'robot', sans-serif;
         font-weight: 700;
