@@ -90,6 +90,14 @@
         row-gap: 1rem;
         overflow: hidden;
         padding-bottom: 2rem;
+        @for $i from 1 through 9 {
+            &:nth-child(#{$i}) {
+                animation-delay: 100ms * $i;
+            }
+        }
+        @include animations.appear;
+            animation: appear 1s;
+            animation-fill-mode: both;
         .menu__grid__card {
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
