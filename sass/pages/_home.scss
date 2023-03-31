@@ -1,5 +1,6 @@
-@use "../utils/variables";
-@use "../utils/mixins";
+@use "./../utils/variables";
+@use "./../utils/mixins";
+@use "./../utils/animations";
 
 h1, h2{
         font-family: 'robot', sans-serif;
@@ -127,6 +128,7 @@ h3 {
         &__container {
             margin-left: 10%;
             margin-right: 10%;
+            column-gap: 8%;
         }
         h2 {
             margin-left: 10%;
@@ -165,42 +167,9 @@ h3 {
     place-items: center;
     transform-origin: top;
     animation: disappear 200ms $animation-duration * $animation-count forwards;
-
-    // &::before {
-    //     content: "";
-    //     height: 100px;
-    //     width: 100px;
-    //     border-right: 5px solid transparent;
-    //     border-top: 5px solid variables.$colour-primary;
-    //     border-radius: 50%;
-    //     animation: spin $animation-duration ease-in-out;
-    //     animation-iteration-count: $animation-count;
-    // }
-    // &::after {
-    //     content: "";
-    //     height: 100px;
-    //     width: 100px;
-    //     position: relative;
-    //     top: -100%;
-    //     opacity: 0.5;
-    //     border: 5px dashed variables.$colour-tertiary;
-    //     border-radius: 50%;
-    //     animation: spin $animation-duration 0.4s ease-in-out;
-    //     animation-iteration-count: $animation-count;
-    // }
 }
 
-@keyframes disappear {
-    to {
-        transform: scale(0);
-    }
-}
-
-// @keyframes spin {
-//     to {
-//         transform: rotate(360deg);
-//     }
-// }
+@include animations.disappear;
 
 .wave {
     position: relative;
@@ -243,16 +212,4 @@ h3 {
 .color3 {
     color: variables.$colour-tertiary;
 }
-@keyframes onde {
-    0% {
-        opacity: 1;
-        transform: scale(.1);
-    }
-    70% {
-        opacity: .5;
-        transform: scale(1);
-    }
-    95% {
-        opacity: 0;
-    }
-}
+@include animations.onde;
